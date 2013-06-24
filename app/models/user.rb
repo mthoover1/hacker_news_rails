@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  # attr_accessible :title, :body
   include BCrypt
 
   has_many :posts
