@@ -1,4 +1,5 @@
 HackerNewsRails::Application.routes.draw do
+
   root :to => "posts_controller#index"
 
   resources :posts
@@ -8,4 +9,5 @@ HackerNewsRails::Application.routes.draw do
   #   find user
   #   user.posts.create(:title => , :content => )
   # end
+
 end
