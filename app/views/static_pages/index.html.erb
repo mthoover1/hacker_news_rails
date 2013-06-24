@@ -1,8 +1,15 @@
 <ol>
 <% @posts.each do |post| %>
 <li>
-  <a class="postvote" data-post-id="<%= post.id %>" href="/postvote/<%=post.id%>/<%=session[:id]%>"><img src="images/up.gif"></a>
+  
+
+  <%= link_to "<what is shown on the page>", "<what route to go to>" %>
+  
+
+
   <a href="<%=post.url%>"><%= post.title %></a><br>
+  <%= %>
+
   <p class="author-comments"><span data-post-id="<%= post.id %>"><%= post.postvotes.count %></span> points by <a href="/user/<%= post.user_id %>"><%= post.user.username %></a> | <a href="/post/<%= post.id %>"><%= post.comments.count %> comments</a></p>
 </li>
 <% end %>
