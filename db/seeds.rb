@@ -6,7 +6,7 @@ users = []
 30.times do
   users << User.create(username: Faker::Internet.user_name,
               email: Faker::Internet.email,
-              password: BCrypt::Password.create("123"))
+              password: "123")
 end
 
 posts = []
@@ -23,7 +23,7 @@ comments = []
 end
 
 posts.each do |post|
-  post.update_attributes(:user_id => 1 + rand(10))
+  post.update_attributes(:user_id => 1 + rand(30))
 end
 
 comments.each do |comment|

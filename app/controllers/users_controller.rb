@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create_user(params[:user])
-    session[:id] = user.id
+    user = User.new(params[:user])
+    redirect_to @user if @user.save
   end
   
   def show
