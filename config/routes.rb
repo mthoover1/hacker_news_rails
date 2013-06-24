@@ -1,7 +1,8 @@
 HackerNewsRails::Application.routes.draw do
 
-  root :to => "posts_controller#index"
+  root :to => "posts#index"
 
+  resources :users
   resources :posts
 
   # in the posts_controller

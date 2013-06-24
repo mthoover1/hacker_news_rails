@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
-  include BCrypt
-
+  require 'bcrypt'
+  attr_accessible :username, :email, :password
   has_many :posts
   has_many :comments
-  has_many :postvotes
-  has_many :commentvotes
+ 
 
   validates :username, :email, :uniqueness => :true, :presence => :true
   validates :password, :presence => :true, :length => { :minimum => 3 }

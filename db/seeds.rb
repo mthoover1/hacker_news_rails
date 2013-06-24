@@ -1,3 +1,6 @@
+require 'bcrypt'
+require 'faker'
+
 users = []
 
 30.times do
@@ -20,7 +23,7 @@ comments = []
 end
 
 posts.each do |post|
-  post.update_attributes(:user_id => users.sample.id)
+  post.update_attributes(:user_id => 1 + rand(10))
 end
 
 comments.each do |comment|
@@ -28,10 +31,4 @@ comments.each do |comment|
   comment.update_attributes(:post_id => posts.sample.id)
 end
 
-300.times do
-  Postvote.create(post_id: posts.sample.id, user_id: users.sample.id)
-end
 
-1200.times do
-  Commentvote.create(comment_id: comments.sample.id, user_id: users.sample.id)
-end
