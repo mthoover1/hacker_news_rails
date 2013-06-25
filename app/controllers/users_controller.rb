@@ -8,8 +8,11 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.new(params[:user])
-    redirect_to @user if @user.save
+    p @user.inspect
+    session[:user_id] = @user.id
+    redirect_to "http://www.google.com" #@user if @user.save
   end
   
   def show
