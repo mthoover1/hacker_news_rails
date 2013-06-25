@@ -9,10 +9,10 @@
   </tr>
   <tr>
     <td></td>
-    <td><%= link_to "Submissions", :user_posts %></td>
+    <td><%= link_to "Submissions", user_posts_path(@user) %></td>
   </tr>
   <tr>
     <td></td>
-    <td><a href="/comments/<%= @user.id %>">comments</a></td>
+    <td><%= link_to "Comments", user_comments_path(@user) %></td>
   </tr>
 </table>

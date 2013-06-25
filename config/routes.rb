@@ -1,9 +1,11 @@
 HackerNewsRails::Application.routes.draw do
   root :to => "posts#index"
 
+  resources :posts
+
   resources :users do
-    resources :posts, :controller => "users_posts"
-    resources :comments, :controller => "users_comments"
+    resources :posts, :controller => "profiles"
+    resources :comments 
   end
 
   match '/login', to: 'sessions#new'
