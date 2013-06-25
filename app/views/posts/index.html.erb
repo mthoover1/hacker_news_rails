@@ -1,0 +1,8 @@
+<ol>
+  <% @posts.each do |post| %>
+  <li>
+    <%= link_to post.title, post.url %>
+    <p class="author-comments"><%= link_to post.user.username, post.user %> | <%= link_to "#{post.comments.count} comments", post %></p>
+  </li>
+  <% end %>
+</ol>
