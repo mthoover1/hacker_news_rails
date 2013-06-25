@@ -13,9 +13,9 @@
     <%= link_to "Submit", :new_post %>
     <%= link_to current_user.username, user %>
   <% end %>
-  <%= link_to "Login"  %>
+  <%= link_to "Login", :login %>
   <%= link_to "Register", :new_user %>
-  <%= link_to "Logout"  %>
+  <%= link_to "Logout", :logout  %>
 </nav>
 <%= yield %>
 

@@ -3,4 +3,6 @@ HackerNewsRails::Application.routes.draw do
 
   resources :users
   resources :posts
+  match '/login', to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy'
 end

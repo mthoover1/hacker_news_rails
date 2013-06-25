@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     User.create(username: user[:username], email: user[:email], password: BCrypt::Password.create(user[:password]))
   end
 
-  def self.authenticated?(username, password)
+  def self.authenticate(username, password)
     if user = User.find_by_username(username)
       return true if BCrypt::Password.new(user.password) == password
     end
