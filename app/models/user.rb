@@ -1,14 +1,12 @@
 class User < ActiveRecord::Base
-  include BCrypt
+  attr_accessible :username, :email, :password
 
+  has_secure_password
   has_many :posts
   has_many :comments
-  has_many :postvotes
-  has_many :commentvotes
 
   validates :username, :email, :uniqueness => :true, :presence => :true
-  validates :password, :presence => :true, :length => { :minimum => 3 }
-
+  validates :password, :length => { :minimum => 3 }
 
   def self.create_user(user)
     User.create(username: user[:username], email: user[:email], password: BCrypt::Password.create(user[:password]))
