@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+  <%= link_to "Hacker News", :root %>
+  <% if current_user %>
+    <%= link_to "Submit", :new_post %>
+    <%= link_to current_user.username, user %>
+    <%= link_to "Logout", :logout  %>
+  <% else %>
+    <%= link_to "Login", :login %>
+    <%= link_to "Register", :new_user %>
+  <% end %>
+</nav>
 <%= yield %>
 
 </body>
