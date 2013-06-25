@@ -12,10 +12,11 @@
   <% if current_user %>
     <%= link_to "Submit", :new_post %>
     <%= link_to current_user.username, user %>
+    <%= link_to "Logout", :logout  %>
+  <% else %>
+    <%= link_to "Login", :login %>
+    <%= link_to "Register", :new_user %>
   <% end %>
-  <%= link_to "Login", :login %>
-  <%= link_to "Register", :new_user %>
-  <%= link_to "Logout", :logout  %>
 </nav>
 <%= yield %>
 
